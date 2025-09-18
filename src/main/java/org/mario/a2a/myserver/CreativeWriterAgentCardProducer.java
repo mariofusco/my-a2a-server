@@ -3,10 +3,13 @@ package org.mario.a2a.myserver;
 import io.a2a.server.PublicAgentCard;
 import io.a2a.spec.AgentCapabilities;
 import io.a2a.spec.AgentCard;
+import io.a2a.spec.AgentInterface;
 import io.a2a.spec.AgentSkill;
+import io.a2a.spec.TransportProtocol;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import java.util.Collections;
+import java.util.List;
 
 @ApplicationScoped
 public class CreativeWriterAgentCardProducer {
@@ -33,6 +36,9 @@ public class CreativeWriterAgentCardProducer {
                         .description("Generate a story based on the given topic")
                         .tags(Collections.singletonList("writing"))
                         .build()))
+                .protocolVersion("0.3.0")
+                .additionalInterfaces(List.of(
+                        new AgentInterface(TransportProtocol.JSONRPC.asString(), "http://localhost:8080")))
                 .build();
     }
 }
