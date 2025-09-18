@@ -28,27 +28,22 @@
     </dependencyManagement>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>io.github.a2asdk</groupId>-->
-<!--            <artifactId>a2a-java-sdk-server-quarkus</artifactId>-->
-<!--            <version>0.2.3.Beta1</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.github.a2asdk</groupId>
-            <artifactId>a2a-java-reference-server</artifactId>
-            <version>0.2.5</version>
+            <artifactId>a2a-java-sdk-reference-jsonrpc</artifactId>
+            <version>0.3.0.Beta1</version>
         </dependency>
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
-            <version>1.2.0</version>
+            <version>1.5.0</version>
         </dependency>
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-ollama</artifactId>
-            <version>1.2.0</version>
+            <version>1.5.0</version>
         </dependency>
     </dependencies>
 
