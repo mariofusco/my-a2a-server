@@ -37,6 +37,7 @@ public class CreativeWriterAgentCardProducer {
                         .tags(Collections.singletonList("writing"))
                         .build()))
                 .protocolVersion("0.3.0")
+                .preferredTransport(TransportProtocol.JSONRPC.asString())
                 .additionalInterfaces(List.of(
                         new AgentInterface(TransportProtocol.JSONRPC.asString(), "http://localhost:8080")))
                 .build();
