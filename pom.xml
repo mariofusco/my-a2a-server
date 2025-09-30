@@ -13,6 +13,8 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>3.22.3</quarkus.version>
+        <langchain4j.version>1.6.0</langchain4j.version>
+        <a2a.version>0.3.0.Beta1</a2a.version>
     </properties>
 
     <dependencyManagement>
@@ -31,19 +33,19 @@
         <dependency>
             <groupId>io.github.a2asdk</groupId>
             <artifactId>a2a-java-sdk-reference-jsonrpc</artifactId>
-            <version>0.3.0.Beta1</version>
+            <version>${a2a.version}</version>
         </dependency>
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j</artifactId>
-            <version>1.5.0</version>
+            <version>${langchain4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-ollama</artifactId>
-            <version>1.5.0</version>
+            <version>${langchain4j.version}</version>
         </dependency>
     </dependencies>
 
