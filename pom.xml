@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <quarkus.version>3.22.3</quarkus.version>
         <langchain4j.version>1.6.0</langchain4j.version>
-        <a2a.version>0.3.0.Beta1</a2a.version>
+        <a2a.version>0.3.2.Final</a2a.version>
     </properties>
 
     <dependencyManagement>
