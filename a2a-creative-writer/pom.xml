@@ -12,9 +12,9 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <quarkus.version>3.22.3</quarkus.version>
-        <langchain4j.version>1.6.0</langchain4j.version>
-        <a2a.version>0.3.2.Final</a2a.version>
+        <quarkus.version>3.36.0</quarkus.version>
+        <langchain4j.version>1.15.1</langchain4j.version>
+        <a2a.version>1.0.0.CR1</a2a.version>
     </properties>
 
     <dependencyManagement>
@@ -26,14 +26,20 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.a2aproject.sdk</groupId>
+                <artifactId>a2a-java-sdk-bom</artifactId>
+                <version>${a2a.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
-            <groupId>io.github.a2asdk</groupId>
+            <groupId>org.a2aproject.sdk</groupId>
             <artifactId>a2a-java-sdk-reference-jsonrpc</artifactId>
-            <version>${a2a.version}</version>
         </dependency>
 
         <dependency>

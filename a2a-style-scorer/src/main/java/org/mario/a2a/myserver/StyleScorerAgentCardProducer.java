@@ -1,15 +1,14 @@
 package org.mario.a2a.myserver;
 
-import io.a2a.server.PublicAgentCard;
-import io.a2a.spec.AgentCapabilities;
-import io.a2a.spec.AgentCard;
-import io.a2a.spec.AgentInterface;
-import io.a2a.spec.AgentSkill;
-import io.a2a.spec.TransportProtocol;
+import org.a2aproject.sdk.server.PublicAgentCard;
+import org.a2aproject.sdk.spec.AgentCapabilities;
+import org.a2aproject.sdk.spec.AgentCard;
+import org.a2aproject.sdk.spec.AgentInterface;
+import org.a2aproject.sdk.spec.AgentSkill;
+import org.a2aproject.sdk.spec.TransportProtocol;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import java.util.Collections;
-import java.util.List;
 
 @ApplicationScoped
 public class StyleScorerAgentCardProducer {
@@ -17,28 +16,23 @@ public class StyleScorerAgentCardProducer {
     @Produces
     @PublicAgentCard
     public AgentCard agentCard() {
-        return new AgentCard.Builder()
+        return AgentCard.builder()
                 .name("Style Scorer")
                 .description("Score a story based on how well it aligns with a given style")
-                .url("http://localhost:8080")
                 .version("1.0.0")
-                .protocolVersion("1.0.0")
-                .capabilities(new AgentCapabilities.Builder()
+                .capabilities(AgentCapabilities.builder()
                         .streaming(true)
                         .pushNotifications(false)
-                        .stateTransitionHistory(false)
                         .build())
                 .defaultInputModes(Collections.singletonList("text"))
                 .defaultOutputModes(Collections.singletonList("text"))
-                .skills(Collections.singletonList(new AgentSkill.Builder()
+                .skills(Collections.singletonList(AgentSkill.builder()
                         .id("style_scorer")
                         .name("Style Scorer")
                         .description("Score a story based on how well it aligns with a given style")
                         .tags(Collections.singletonList("writing"))
                         .build()))
-                .protocolVersion("0.3.0")
-                .preferredTransport(TransportProtocol.JSONRPC.asString())
-                .additionalInterfaces(List.of(
+                .supportedInterfaces(Collections.singletonList(
                         new AgentInterface(TransportProtocol.JSONRPC.asString(), "http://localhost:8080")))
                 .build();
     }
