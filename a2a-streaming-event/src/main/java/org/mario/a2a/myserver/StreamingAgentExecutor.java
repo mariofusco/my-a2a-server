@@ -21,9 +21,9 @@ public class StreamingAgentExecutor implements AgentExecutor {
 
         emitter.startWork();
 
-        emitter.addArtifact(List.of(new TextPart("1.0")));
-        emitter.addArtifact(List.of(new TextPart("1.0")));
-        emitter.addArtifact(List.of(new TextPart("1.0")));
+        emitter.addArtifact(List.of(new TextPart("artifact1")));
+        emitter.addArtifact(List.of(new TextPart("artifact2")));
+        emitter.addArtifact(List.of(new TextPart("artifact3")));
 
         emitter.complete();
     }
