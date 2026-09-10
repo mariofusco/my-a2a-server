@@ -14,6 +14,7 @@
         <module>a2a-style-scorer</module>
         <module>a2a-echo-server</module>
         <module>a2a-multitenant</module>
+        <module>a2a-streaming-event</module>
     </modules>
 
     <properties>
