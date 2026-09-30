@@ -12,7 +12,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import jakarta.inject.Inject;
 import java.util.List;
-import org.a2aproject.sdk.extras.multitenancy.Tenant;
+import org.a2aproject.sdk.server.multitenancy.Tenant;
 
 @ApplicationScoped
 @Tenant("scorer")

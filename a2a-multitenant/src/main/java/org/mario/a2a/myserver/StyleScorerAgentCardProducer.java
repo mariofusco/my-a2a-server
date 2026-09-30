@@ -1,6 +1,5 @@
 package org.mario.a2a.myserver;
 
-import org.a2aproject.sdk.server.PublicAgentCard;
 import org.a2aproject.sdk.spec.AgentCapabilities;
 import org.a2aproject.sdk.spec.AgentCard;
 import org.a2aproject.sdk.spec.AgentInterface;
@@ -9,7 +8,7 @@ import org.a2aproject.sdk.spec.TransportProtocol;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
 import java.util.Collections;
-import org.a2aproject.sdk.extras.multitenancy.Tenant;
+import org.a2aproject.sdk.server.multitenancy.Tenant;
 
 @ApplicationScoped
 @Tenant("scorer")
@@ -35,7 +34,7 @@ public class StyleScorerAgentCardProducer {
                         .tags(Collections.singletonList("writing"))
                         .build()))
                 .supportedInterfaces(Collections.singletonList(
-                        new AgentInterface(TransportProtocol.JSONRPC.asString(), "http://localhost:8080/")))
+                        new AgentInterface(TransportProtocol.JSONRPC.asString(), "http://localhost:8080/", "scorer")))
                 .build();
     }
 }
